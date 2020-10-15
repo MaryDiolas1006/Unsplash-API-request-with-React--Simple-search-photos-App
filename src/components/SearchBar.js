@@ -20,9 +20,13 @@ class SearchBar extends React.Component {
         return (
             <div className="form">
                 <form onSubmit={this.onFormSubmit}>
-                    <div className="col-12 col-md-8">
-                        <label>Search Images</label>
-                        <input onChange={this.onInputChange} type="text" name="search" className="form-control form-control-sm" />
+                    <div className="col-12 col-md-8 mx-auto">
+                        <label style={{marginTop: "50px", fontSize: "20px"}}>Search Images</label>
+                        <input
+                            onChange={this.onInputChange}
+                            type="text" name="search"
+                            className="form-control form-control-sm"
+                        />
                     </div>
                 </form>
             </div>
