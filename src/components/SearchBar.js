@@ -4,6 +4,11 @@ import React from 'react';
 class SearchBar extends React.Component {
     state = { text: '' };
 
+    onFormSubmit = e => {
+        e.preventDefault();
+
+        this.props.onSubmit(this.state.text);
+    }
 
     onInputChange = e => {
         console.log(e.target.value);
@@ -14,7 +19,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="form">
-                <form>
+                <form onSubmit={this.onFormSubmit}>
                     <div className="col-12 col-md-8">
                         <label>Search Images</label>
                         <input onChange={this.onInputChange} type="text" name="search" className="form-control form-control-sm" />
